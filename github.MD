@@ -6,3 +6,4 @@
 3. 在github建立一个新的repository
 4. 创建远程 `git remote add origin  <REMOTE_URL> `
 5. 测试远程 `git remote -v`
+6. 代码合并 `git pull --rebase origin master`

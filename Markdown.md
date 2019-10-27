@@ -1,4 +1,4 @@
-# 基本语法
+# `基本语法`
 1. 标题
     ># 这是一级标题
     >## 这是二级标题
@@ -22,10 +22,10 @@
     *****
 5. 图片
    ## 语法
-   > ![图片alt](图片地址 ''图片title'')
+   > [图片alt](图片地址 ''图片title'')
 
-    图片alt就是显示在图片下面的文字，相当于对图片内容的解释。
-    图片title是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加
+    >>图片alt就是显示在图片下面的文字，相当于对图片内容的解释。
+    >>图片title是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加
 
     ## 示例
     ![blockchain](https://www.baidu.com/img/superlogo_c4d7df0a003d3db9b65e9ef0fe6da1ec.png?where=super "Baidu logo")

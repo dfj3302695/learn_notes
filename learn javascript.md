@@ -65,7 +65,101 @@ javacript高级编程设计（第3版）-读书笔记
         ```
 
 
-2. 
+2. 执行环境和作用域
+
+    在web中，执行环境被认为是window对象
+### 第5章 引用类型
+1. Object类型
+创建Object实例有两种方法
+    ```javascript
+    var person = new Object();
+    person.name = "jack";
+    person.age = 29;
+    //另一种
+    var person = {
+        name: "jack",
+        // 也可这样 "name": "jack",
+        age: 29
+    }
+    ```
+2. Array类型
+    同样两种方法
+
+    ```javascript
+    var colors = new Array();
+    //另一种
+    var colors =[]
+    ```
+
+    1. 检测数组
+
+       - instanceof
+       - isArray()
+
+    2. 转换方法
+
+        - toLocaleString()
+        - toString()
+        - valueOf()
+        - join()
+
+    3. stack方法
+
+        - push()
+        - pop()
+
+    4. 队列方法
+
+        - shift()
+        - unshift()
+
+    5. 重排序方法
+
+        - reverse()
+        - sort()
+
+    6. 操作方法
+
+        - concat()
+        - slice()
+        - splice()
+
+    7. 位置方法
+
+        - indexOf()
+        - lastIndexOf()
+
+    8. 迭代方法
+
+        - every()
+        - filter()
+        - forEach()
+        - map()
+        - some()
+
+    9. 缩小方法
+
+        - reduce()
+        - reducRight()
+
+3. Date 类型 var now = new Date();
+
+    - 方法 Date.parse()和 Date.UTC() , Date.now()
+
+    1. 继承的方法，重写了toLocalString()和toString()
+    2. 日期格式化方法
+
+        - toDateString()
+        - toTimeString()
+        - toLocaleDateString()
+        - toLocaleTimeString()
+        - toUTCString()
+
+    3. 日期/时间组件方法
+
+        - [](jpg/learn-javascript/屏幕快照&#32;2019-10-28&#32;下午3.13.02.png)
+
+
 
 ### 第24章 最佳实践
 1. 代码约定

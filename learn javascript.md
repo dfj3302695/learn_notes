@@ -1,5 +1,72 @@
 # javacript高级编程设计（第3版）-读书笔记
-### 24章 最佳实践
+### 第4章 变量，作用域和内存问题
+1. 基本类型和引用类型的值
+    1. 基本类型 `undifined`,`Null`,`Boolean`,`Number`,`String`
+
+    不能给基本类型的值添加属性，尽管这样做不会导致任何错误，如：
+    ```javascript
+    var name = "Nicholas";
+    name.age = 27;
+    alert(name.age); //undifined
+    ```
+    2. 复制变量值
+
+        - 基本类型复制是各自独立的
+        - 引用类型复制是复制指针，改变任何一个都会影响到其它
+
+    3. 传递参数
+
+        传入function的参数都是依值传，无伦是基本类型还是引用类型
+        ```javascript
+        function addTen(num) {
+        num += 10;
+        return num;
+        }
+        var count = 20;
+        var result = addTen(count);
+        console.log(count);  //20
+        console.log(result); //30
+        //------------------------------
+        function setName(obj) {
+            obj.name = "Nicholas";
+            
+        }
+        var person = {};
+        setName(person);
+        console.log(person.name);  //Nicholas
+        //-------------------------
+        function setName(obj) {
+            obj.name = "Nicholas";
+            obj = {};   //局部变量， function完毕立即被销毀
+            obj.name = 'Greg';//局部变量， function完毕立即被销毀
+        }
+        var person = {};
+        setName(person);
+        console.log(person.name);  //Nicholas
+        ```
+    4. 检测类型
+
+        `typeof` 和 `instanceof`
+        ```javascript
+        var s = 'nicholas';
+        var b = true;
+        var i = 22;
+        var u;
+        var n = null;
+        var o = new Object();
+        console.log(typeof s); //string
+        console.log(typeof b); //boolean
+        console.log(typeof i); //number
+        console.log(typeof u); //undefined
+        console.log(typeof n); //object
+        console.log(typeof o); //object
+        console.log(n instanceof Object); //基本类型都是false
+        ```
+
+
+2. 
+
+### 第24章 最佳实践
 1. 代码约定
 
     1. 可读性
@@ -48,7 +115,7 @@
         ```
     以上三种可选一种合适自己的
    
-    4. 松散耦合
+    1. 松散耦合
 
         - 解耦HTML/Javascript
         - 解耦CSS/Javascript

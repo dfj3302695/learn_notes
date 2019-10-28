@@ -1,4 +1,5 @@
-# javacript高级编程设计（第3版）-读书笔记
+javacript高级编程设计（第3版）-读书笔记
+===
 ### 第4章 变量，作用域和内存问题
 1. 基本类型和引用类型的值
     1. 基本类型 `undifined`,`Null`,`Boolean`,`Number`,`String`

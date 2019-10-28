@@ -157,7 +157,9 @@ javacript高级编程设计（第3版）-读书笔记
 
     3. 日期/时间组件方法
 
-        - [](jpg/learn-javascript/屏幕快照&#32;2019-10-28&#32;下午3.13.02.png)
+        - ![11](jpg/learn-javascript/11.png)
+        - ![](jpg/learn-javascript/屏幕快照&#32;2019-10-28&#32;下午3.25.08.png)
+        - ![](jpg/learn-javascript/屏幕快照&#32;2019-10-28&#32;下午3.25.17.png)
 
 
 

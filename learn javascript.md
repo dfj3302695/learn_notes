@@ -161,7 +161,165 @@ javacript高级编程设计（第3版）-读书笔记
         - ![22](/jpg/learn-javascript/屏幕快照&#32;2019-10-28&#32;下午3.25.08.png)
         - ![33](/jpg/learn-javascript/屏幕快照&#32;2019-10-28&#32;下午3.25.17.png)
 
+    4. RegExp类型
 
+        - var expression = / pattern / flags;
+          - pattern
+            - g: 表示全局(global)
+            - i: 不区分大小写(case-insensitive)
+            - m: 多行模式(multiline)
+        1. RegExp 实例属性
+           1. global
+           2. ignoreCase
+           3. lastIndex
+           4. multiline
+           5. source
+        2. RegExp 实例方法
+        3. RegExp 构造函数属性
+        4. 模式的局限性
+    5. Function类型 函数实际上是对象
+       1. 没有重载（深入理解）
+       2. 函数声明与表达式
+
+        ```javascript
+        console.log(sum(10,10));
+        function sum(num1,num2){
+        return num1 + num2
+        }
+        //没问题，解析器会提升函数声明
+        ```
+
+         ```javascript
+        console.log(sum(10,10));
+        var sum = function(num1,num2){
+        return num1 + num2
+        }
+        //会发生错误
+        onsole.log(sum(10,10));
+            ^
+
+        TypeError: sum is not a function
+            at Object.<anonymous> (/Users/jack/app_design/learn_notes/Js for learn javascript/type.js:2:13)
+            at Module._compile (internal/modules/cjs/loader.js:776:30)
+            at Object.Module._extensions..js (internal/modules/cjs/loader.js:787:10)
+            at Module.load (internal/modules/cjs/loader.js:653:32)
+            at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+            at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+            at Function.Module.runMain (internal/modules/cjs/loader.js:829:12)
+            at startup (internal/bootstrap/node.js:283:19)
+            at bootstrapNodeJSCore (internal/bootstrap/node.js:622:3)
+        ```
+        3. 做为值的函数
+        ```javascript
+        function add10(num){
+        return num+10;
+        }
+        function callSomeFunction(someFunction, SomeArgument){
+            return someFunction(SomeArgument);
+        }
+
+        var result1 = callSomeFunction(add10,10);
+        console.log(result1) //20
+        //要访问函数的指针面不执行函数的话需去掉（）
+        ```
+
+        // 依对象属性排序
+        ```javascript
+        var data = [
+            {
+                name: 'jack',
+                age: 23
+            },
+            {
+                "name": 'promise',
+                "age": 10
+            },
+            {
+                name: 'aj',
+                age: 50
+            }
+        ]
+        function comparFunction(propertyName) {
+            return function(obj1,obj2) {
+                var val1 = obj1[propertyName]; //不能用obj1.propertyName
+                var val2 = obj2[propertyName];
+                if (val1 < val2){
+                    return -1;
+                }else if (val1 > val2){
+                    return 1;
+                }else {
+                    return 0;
+                }
+            }
+        }
+        console.log(data.sort(comparFunction("age")))
+        console.log(data.sort(comparFunction("name")))
+        ```
+        4. 函数内部属性 `arguments`和`this`
+
+            - `arguments.callee` 指向函数自身，用于递归算法,保存当前函数的引用
+            - `arguments.callee.caller` 保存当前函数的函数的引用
+
+        5. 函数属性和方法
+           1. `length` 参数的数量
+           2. `prototype` 
+           3. `apply()`
+           4. `call()`
+           5. `bind()`
+
+        6. 基本包装类型
+           1. `Boolean`
+           2. `Number`
+              1. `toFixed()` 小数点
+              2. `toExponential()` e表示法
+              3. `toPrecision()` 位数
+           3. `String`
+              1. 字符方法
+                 1. `charAt()`
+                 2. `charCodeAt()`
+              2. 字符串方法
+                 1. `concat()` 拼接
+                 2. `slice()`
+                 3. `substr()`
+                 4. `substring()`
+
+              3. 字符串位置方法
+                 1. `indexOf()`
+                 2. `lastIndexOf()`
+
+              4. trim()方法 删除空格
+              5. 大小写转换
+                 1. toLowerCase()
+                 2. toLocalLowerCase()
+                 3. toUpperCase()
+                 4. toLocalUpperCase()
+
+              6. 模式匹配方法
+                 1. match(正则表达式或RegExp对象)
+                 2. search(正则表达式或RegExp对象)
+                 3. replace()
+              7. localeCompar()方法
+              8. fromCharCode()方法
+              9. HTML方法
+        7. 单体内置对象 Object,Array,String,Global,Math
+           1. Global 对象
+              1. URI 编码方法
+                 1. encodeURI()和encodeURIComponent()
+                 2. decodeURI()和decodeURIComponent()
+              2. eval() 方法 执行代码
+              3. Global对象的属性
+
+                ![](jpg/learn-javascript/屏幕快照&#32;2019-10-29&#32;下午1.11.45.png)
+            
+              4. window 对象
+              5. Math 对象
+                 1. 属性
+
+                ![](jpg/learn-javascript/屏幕快照&#32;2019-10-29&#32;下午1.15.58.png)
+                 2. min()和max()方法
+                 3. 
+
+            
 
 ### 第24章 最佳实践
 1. 代码约定

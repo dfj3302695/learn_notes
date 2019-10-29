@@ -1,7 +1,10 @@
-var date = new Date();
-console.log(date);
-console.log(date.toLocaleString());
-console.log(date.toString());
-console.log(date.valueOf());
-console.log(date.toDateString())
-console.log(date.toLocaleDateString())
+window.color = 'red';
+var o = {
+    color: 'blue'
+}
+
+function sayColor(){
+    console.log(this.color)
+}
+
+sayColor();

@@ -1,10 +1,10 @@
-window.color = 'red';
-var o = {
-    color: 'blue'
+function Person(name,age,job){
+    this.name = name;
+    this.age = age;
+    this.job = job;
+    this.sayName = function(){
+        console.log(this.name);
+    }
 }
-
-function sayColor(){
-    console.log(this.color)
-}
-
-sayColor();
+var person1 = new Person('jack',11,"engineer");
+console.log(Object.keys(Person.prototype))

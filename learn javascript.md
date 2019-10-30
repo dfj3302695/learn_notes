@@ -317,7 +317,68 @@ javacript高级编程设计（第3版）-读书笔记
 
                 ![](jpg/learn-javascript/屏幕快照&#32;2019-10-29&#32;下午1.15.58.png)
                  2. min()和max()方法
-                 3. 
+                 3. 舍入方法
+                    1. Math.ceil()
+                    2. Math.floor()
+                    3. Math.round()
+                 4. random()方法
+                 5. 其它方法 ！[](jpg/learn-javascript/屏幕快照&#32;2019-10-30&#32;下午3.11.16.png)
+
+### 第6章 面向对象的程序设计
+1. 理解对象
+   1. 属性类型
+      1. 数据属性
+         1. `[[Configurable]]` //默认true
+         2. `[[Enumerable]]`    //默认true
+         3. `[[Writable]]`  //默认true
+         4. `[[Value]]`       //默认undefined
+
+      例子：
+      ```javascript
+      var person = {};
+      //defineProperty()方法修改属性默认
+      Object.definProperty(person, "name",{
+          writable:false,
+          value: "Nicholas"
+      });
+      alert(person.name); //"Nicholas"
+      person.name = "Greg";
+      alert(person.name); //'Nicholas'
+      ```
+      2. 访问器属性
+         1. `[[Configurable]]` //默认true
+         2. `[[Enumerable]]`    //默认true
+         3. `[[Get]]`  //默认undefined
+         4. `[[Set]]`  //默认undefined 
+
+         ```javascript
+         var book = {
+                _year:2004,
+                edition: 1
+            }
+        Object.defineProperty(book, "year", {
+            get: function(){
+                return this._year;
+            },
+            set: function(newValue){
+                this._year = newValue;
+                this.edition += 1;
+            }
+        })
+
+        book.year =2052;
+        console.log(book._year);
+        console.log(book.edition);
+        book.year = 2015;
+        console.log(book._year);
+        console.log(book.edition);
+        ```
+    2. 定义多属性
+       1. Object.defineProperties()
+    3. 读取属性的特性
+       1. Object.getOwnPropertyDescriptor()//返回对象的属性特性 可以针任何对象包括DOM和BOM对象使用
+2. 创建对象
+   1. 
 
             
 

@@ -161,3 +161,36 @@ func main() {
 }
 
 ```
+
+### 接口
+- 接口也是一种类型
+- 空接口
+  - 作为函数参数 `func a( a interface{} ){}`
+  - 作为map的返回值 `map[string]interface{}`
+- 空接口断言
+	1. `str,ok := a.(string)` 
+
+	```go
+	func a(a interface{}){
+		str,ok := a.(string)
+		if !ok{
+			fmt.Println("wrong")
+		}else{
+			fmt.Println(”传进来的参数是字符串：“，str)
+		}
+	}
+	```
+	2. `switch`
+
+	```go
+	func a(a interface{}){
+		swith t:=a.(type){
+			case string:
+				fmt.println("是一个字符串：",t)
+			case int:
+				fmt.println("是一个int：",t)
+			case bool:
+				fmt.println("是一个bool：",t)
+		}
+	}
+	```
